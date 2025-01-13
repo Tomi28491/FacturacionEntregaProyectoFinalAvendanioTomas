@@ -26,7 +26,7 @@ public class ClienteController {
 	@GetMapping
 	public ResponseEntity<List<Cliente>> getAllClientes() {
 		try {
-			List<Cliente> clientes = clieServ.getAllCliente();
+			List<Cliente> clientes = clieServ.getAllClientes();
 			return ResponseEntity.ok(clientes); // 200 OK
 		}catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); //500
@@ -45,7 +45,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Cliente> createCliente(@RequestBody Cliente cliente) {
+	public ResponseEntity<Cliente> saveCliente(@RequestBody Cliente cliente) {
 		try {
 			Cliente clienteCreado = clieServ.saveCliente(cliente);
 			return ResponseEntity.status(HttpStatus.CREATED).body(clienteCreado); // 201 Created

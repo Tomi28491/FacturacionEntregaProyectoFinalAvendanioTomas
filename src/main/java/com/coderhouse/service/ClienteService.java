@@ -15,13 +15,13 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clieRepo;
 	
-	public List<Cliente> getAllCliente(){
+	public List<Cliente> getAllClientes(){
 		return clieRepo.findAll();
 	}
 	
 	public Cliente findByID(Long id) {
 		
-		return clieRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Alumno no encontrado"));
+		return clieRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Cliente no encontrado"));
 	}
 	
 	@Transactional
@@ -45,7 +45,7 @@ public class ClienteService {
 	
 	public void deleteClienteById(Long id) {
 		if (!clieRepo.existsById(id)) {
-			throw new IllegalArgumentException("Alumno no encontrado");
+			throw new IllegalArgumentException("Cliente no encontrado");
 		}
 		clieRepo.deleteById(id);
 	}

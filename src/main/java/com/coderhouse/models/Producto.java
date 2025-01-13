@@ -22,11 +22,13 @@ public class Producto {
 	private long idProducto;
 	private String nombre;
 	
-	@Column(nullable=false)
+
 	private int cantidad;
 	
 	@ManyToMany(mappedBy = "productos", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Venta> ventas = new ArrayList<>();
+	
+	@Column(nullable=false)
 	private double precio;
 	
 	
