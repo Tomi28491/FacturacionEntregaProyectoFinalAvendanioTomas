@@ -30,7 +30,6 @@ public class Venta {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
-	@Column(nullable=false)
 	private Cliente clie;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
