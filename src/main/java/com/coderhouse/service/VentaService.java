@@ -3,11 +3,13 @@ package com.coderhouse.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 
 import com.coderhouse.models.Venta;
 import com.coderhouse.repository.VentaRepository;
 
+
+@Service
 public class VentaService {
 	
 	@Autowired
@@ -29,6 +31,7 @@ public class VentaService {
 		Venta venta = findByID(id);
 		venta.setMontoTotal(ventaModificada.getMontoTotal());
 		venta.setMetodoPago(ventaModificada.getMetodoPago());
+		venta.setFecha(ventaModificada.getFecha());
 		
 		return saveVenta(venta);
 	}

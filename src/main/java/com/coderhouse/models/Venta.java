@@ -25,7 +25,7 @@ public class Venta {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long idVenta;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private LocalDateTime fecha;
 	
 	@ManyToOne
