@@ -16,14 +16,22 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n    \"nombre\" : \"pedro\",\r\n    \"apellido\" : \"gomez\",\r\n    \"mail\" : \"pgomez@gmail.com\",\r\n    \"dni\" : 12345878,\r\n    \"direccion\" : \"Chaco, Argentina\"\r\n\r\n\r\n}",
+=======
+							"raw": "{\r\n    \"nombre\" : \"pedro\",\r\n    \"apellido\" : \"gomez\",\r\n    \"mail\" : \"pgomez@gmail.com\",\r\n    \"dni\" : 12345678,\r\n    \"direccion\" : \"Chaco, Argentina\"\r\n\r\n\r\n}",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/clientes/6"
+=======
+						"url": "http://localhost:8080/api/clientes/1"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				},
@@ -34,7 +42,11 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n    \"nombre\" : \"Tomi\",\r\n    \"apellido\" : \"Rodriguez\",\r\n    \"mail\" : \"trodriguez@gmail.com\",\r\n    \"dni\" : 44624521,\r\n    \"direccion\" : \"Buenos Aires, Argentina\"\r\n\r\n\r\n}",
+=======
+							"raw": "{\r\n    \"nombre\" : \"Agustin\",\r\n    \"apellido\" : \"Rodriguez\",\r\n    \"mail\" : \"arodriguez@gmail.com\",\r\n    \"dni\" : 44828941,\r\n    \"direccion\" : \"Buenos Aires, Argentina\"\r\n\r\n\r\n}",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +80,11 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/clientes/5"
+=======
+						"url": "http://localhost:8080/api/clientes/3"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				}
@@ -84,7 +100,11 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n    \"clieId\": 4,\r\n    \"productoIds\": [2, 4],\r\n    \"cantidades\": [1, 1],\r\n    \"metodoPago\": \"Tarjeta\"\r\n\r\n\r\n}",
+=======
+							"raw": "{\r\n    \"fecha\" : \"2025-01-16T10:45:30\",\r\n    \"montoTotal\" : 1700000.0,\r\n    \"metodoPago\" : \"Tarjeta\"\r\n\r\n\r\n}",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,20 +116,32 @@
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 					"name": "Generar la Venta",
+=======
+					"name": "Crear Venta",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n    \"clieId\": 5,\r\n    \"productoIds\": [1, 4],\r\n    \"cantidades\": [2, 3],\r\n    \"metodoPago\": \"Tarjeta\"\r\n}",
+=======
+							"raw": "{\r\n    \"fecha\" : \"2025-01-15T10:45:30\",\r\n    \"montoTotal\" : 1800000.0,\r\n    \"metodoPago\" : \"Tarjeta\"\r\n}",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/ventas/vender"
+=======
+						"url": "http://localhost:8080/api/ventas"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				},
@@ -136,7 +168,11 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/ventas/1"
+=======
+						"url": "http://localhost:8080/api/ventas/3"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				}
@@ -170,7 +206,11 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n    \"nombre\" : \"Iphone 16\",\r\n    \"cantidad\" : 8,\r\n    \"precio\" : 1200000.0\r\n\r\n}",
+=======
+							"raw": "{\r\n    \"nombre\" : \"Iphone 14\",\r\n    \"cantidad\" : 5,\r\n    \"precio\" : 950000.0\r\n\r\n}",
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 							"options": {
 								"raw": {
 									"language": "json"
@@ -195,7 +235,11 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/productos/4"
+=======
+						"url": "http://localhost:8080/api/productos/3"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				},
@@ -204,7 +248,11 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+<<<<<<< HEAD
 						"url": "http://localhost:8080/api/productos/4"
+=======
+						"url": "http://localhost:8080/api/productos/3"
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 					},
 					"response": []
 				}

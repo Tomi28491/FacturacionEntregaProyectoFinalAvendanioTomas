@@ -8,10 +8,15 @@ import org.springframework.stereotype.Service;
 import com.coderhouse.models.Producto;
 import com.coderhouse.repository.ProductoRepository;
 
+<<<<<<< HEAD
 import jakarta.transaction.Transactional;
 
 @Service
 public class ProductoService implements IProductoService{
+=======
+@Service
+public class ProductoService {
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 	
 	@Autowired
 	private ProductoRepository proRepo;

@@ -6,17 +6,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import com.coderhouse.dtos.VentaDto;
 import com.coderhouse.models.Cliente;
 import com.coderhouse.models.Producto;
+=======
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 import com.coderhouse.models.Venta;
 import com.coderhouse.models.VentaDetalle;
 import com.coderhouse.repository.VentaRepository;
 
+<<<<<<< HEAD
 import jakarta.transaction.Transactional;
 
 @Service
 public class VentaService implements IVentaService{
+=======
+
+@Service
+public class VentaService {
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 	
 	@Autowired
 	private VentaRepository venRepo;
@@ -47,6 +56,12 @@ public class VentaService implements IVentaService{
 	@Transactional
 	public Venta updateVenta(Long id, VentaDto ventaDto) {
 		Venta venta = findByID(id);
+<<<<<<< HEAD
+=======
+		venta.setMontoTotal(ventaModificada.getMontoTotal());
+		venta.setMetodoPago(ventaModificada.getMetodoPago());
+		venta.setFecha(ventaModificada.getFecha());
+>>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 		
 		Cliente cliente = clieServ.findByID(ventaDto.getClieId());
 		
