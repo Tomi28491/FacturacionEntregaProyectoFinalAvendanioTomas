@@ -53,29 +53,50 @@
 Uso
 Swagger UI
 Una vez que la aplicación esté en ejecución, puedes acceder a la documentación interactiva de la API en:
+
 http://localhost:8080/swagger-ui/index.html
+
 Endpoints principales
+
 Recurso	Método	Descripción	Ejemplo de URL
+
 /productos	GET	Listar todos los productos	http://localhost:8080/productos
+
 /productos	POST	Crear un nuevo producto	http://localhost:8080/productos
+
 /clientes	GET	Listar todos los clientes	http://localhost:8080/clientes
+
 /ventas	POST	Registrar una nueva venta	http://localhost:8080/ventas
 
 Estructura del proyecto
+
 src
+
 ├── main
+
 │  ├── java/com/coderhouse
+
 │   │   ├── config       # Configuración general del proyecto (Swagger.)
+
 │   │   ├── controller   # Controladores REST
+
 │   │   ├── dtos         # Clases para el intercambio de datos (Data Transfer Objects)
+
 │   │   ├── model        # Entidades del modelo de datos
+
 │   │   ├── repository   # Repositorios JPA
+
 │   │   ├── service      # Lógica de negocio
+
 │   │   └── CommercialManagerApplication.java # Clase principal
+
 │   └── resources
-│       └── application.properties # Configuración de la aplicación    
+
+│       └── application.properties # Configuración de la aplicación 
+
 └── test
-    └── java/com/coderhouse # Tests unitarios y de integración
+    ├── java/com/coderhouse # Tests unitarios y de integración
+    
 Autor
 Tu Nombre
 📧 Correo: avendaoagustin@gmail.com
