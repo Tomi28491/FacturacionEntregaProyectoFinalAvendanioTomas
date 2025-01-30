@@ -11,9 +11,12 @@ import com.coderhouse.repository.ClienteRepository;
 import jakarta.transaction.Transactional;
 
 @Service
-public class ClienteService {
+public class ClienteService implements IClienteService{
 	@Autowired
 	private ClienteRepository clieRepo;
+	
+	@Autowired
+	private TimeRestService timeServ;
 	
 	public List<Cliente> getAllClientes(){
 		return clieRepo.findAll();
@@ -26,6 +29,7 @@ public class ClienteService {
 	
 	@Transactional
 	public Cliente saveCliente(Cliente clie) {
+		clie.setFechaRegistro(timeServ.obtenerFechaActual());
 		return clieRepo.save(clie);	
 	}
 	

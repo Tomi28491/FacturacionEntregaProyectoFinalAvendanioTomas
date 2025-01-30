@@ -4,116 +4,63 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name="ventas")
 public class Venta {
 
+	@Schema(description = "ID de la Venta", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long idVenta;
 	
-	@Column(nullable=false)
+	
+	@Schema(description = "Fecha de alta del Cliente", example = "2025-01-29T14:30:00")
 	private LocalDateTime fecha;
 	
+	
+	@Schema(description = "ID del Cliente", requiredMode = Schema.RequiredMode.REQUIRED, example = "1")
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
 	private Cliente clie;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(
-        name = "Venta_Producto",
-        joinColumns = @JoinColumn(name = "id_venta"),
-        inverseJoinColumns = @JoinColumn(name = "id_producto")
-    )
-	private List<Producto> productos = new ArrayList<>();
 	
+	@Schema(description = "Lista de Detalle de Venta de la Venta", requiredMode = Schema.RequiredMode.REQUIRED)
+	@JsonManagedReference
+	@OneToMany(mappedBy = "ven", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<VentaDetalle> ventasDetalles = new ArrayList<>();
+	
+	@Schema(description = "Cantidad de los Productos", requiredMode = Schema.RequiredMode.REQUIRED, example = "8")
+	private int cantidadProductos;
+	
+	@Schema(description = "Monto Total", requiredMode = Schema.RequiredMode.REQUIRED, example = "1500000.0")
 	private double montoTotal;
 	
+	@Schema(description = "Metodo de Pago", requiredMode = Schema.RequiredMode.REQUIRED, example = "Tarjeta")
 	private String metodoPago;
-
-	public Venta() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Venta(long idVenta, LocalDateTime fecha, Cliente clie, List<Producto> productos, double montoTotal,
-			String metodoPago) {
-		this();
-		this.idVenta = idVenta;
-		this.fecha = fecha;
-		this.clie = clie;
-		this.productos = productos;
-		this.montoTotal = montoTotal;
-		this.metodoPago = metodoPago;
-	}
-
-	public long getIdVenta() {
-		return idVenta;
-	}
-
-	public void setIdVenta(long idVenta) {
-		this.idVenta = idVenta;
-	}
-
-	public LocalDateTime getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(LocalDateTime fecha) {
-		this.fecha = fecha;
-	}
-
-	public Cliente getClie() {
-		return clie;
-	}
-
-	public void setClie(Cliente clie) {
-		this.clie = clie;
-	}
-
-	public List<Producto> getProductos() {
-		return productos;
-	}
-
-	public void setProductos(List<Producto> productos) {
-		this.productos = productos;
-	}
-
-	public double getMontoTotal() {
-		return montoTotal;
-	}
-
-	public void setMontoTotal(double montoTotal) {
-		this.montoTotal = montoTotal;
-	}
-
-	public String getMetodoPago() {
-		return metodoPago;
-	}
-
-	public void setMetodoPago(String metodoPago) {
-		this.metodoPago = metodoPago;
-	}
-
-	@Override
-	public String toString() {
-		return "Venta [idVenta=" + idVenta + ", fecha=" + fecha + ", clie=" + clie + ", productos=" + productos
-				+ ", montoTotal=" + montoTotal + ", metodoPago=" + metodoPago + "]";
-	}
-	
 	 
 	
 }

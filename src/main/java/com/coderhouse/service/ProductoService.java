@@ -3,11 +3,15 @@ package com.coderhouse.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.coderhouse.models.Producto;
 import com.coderhouse.repository.ProductoRepository;
 
-public class ProductoService {
+import jakarta.transaction.Transactional;
+
+@Service
+public class ProductoService implements IProductoService{
 	
 	@Autowired
 	private ProductoRepository proRepo;
@@ -20,10 +24,12 @@ public class ProductoService {
 		return proRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Producto no encontrado"));
 	}
 
+	@Transactional
 	public Producto saveProducto(Producto producto) {
 		return proRepo.save(producto);	
 	}
 
+	@Transactional
 	public Producto updateProducto(Long id, Producto productoModificado) {
 		Producto producto = findByID(id);
 		producto.setNombre(productoModificado.getNombre());

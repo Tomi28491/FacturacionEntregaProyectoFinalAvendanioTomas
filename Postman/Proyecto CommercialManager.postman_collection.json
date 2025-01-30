@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "78c691b6-cced-4909-a806-c760041a5513",
+		"name": "Proyecto CommercialManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38590216"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Editar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"pedro\",\r\n    \"apellido\" : \"gomez\",\r\n    \"mail\" : \"pgomez@gmail.com\",\r\n    \"dni\" : 12345878,\r\n    \"direccion\" : \"Chaco, Argentina\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/clientes/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Tomi\",\r\n    \"apellido\" : \"Rodriguez\",\r\n    \"mail\" : \"trodriguez@gmail.com\",\r\n    \"dni\" : 44624521,\r\n    \"direccion\" : \"Buenos Aires, Argentina\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Cliente Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/clientes/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venta",
+			"item": [
+				{
+					"name": "Editar Venta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clieId\": 4,\r\n    \"productoIds\": [2, 4],\r\n    \"cantidades\": [1, 1],\r\n    \"metodoPago\": \"Tarjeta\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/ventas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Generar la Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clieId\": 5,\r\n    \"productoIds\": [1, 4],\r\n    \"cantidades\": [2, 3],\r\n    \"metodoPago\": \"Tarjeta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/ventas/vender"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/ventas"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Venta Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/ventas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Venta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/ventas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "Editar Producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Iphone 12\",\r\n    \"cantidad\" : 6,\r\n    \"precio\" : 800000.0\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/productos/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Iphone 16\",\r\n    \"cantidad\" : 8,\r\n    \"precio\" : 1200000.0\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/productos"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/productos"
+					},
+					"response": []
+				},
+				{
+					"name": "Traer Producto Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/productos/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/productos/4"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
