@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -37,12 +38,9 @@ public class Venta {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long idVenta;
 	
-<<<<<<< HEAD
 	
 	@Schema(description = "Fecha de alta del Cliente", example = "2025-01-29T14:30:00")
-=======
 	@Column(nullable=true)
->>>>>>> 13c8f73dcb223b77b9a7438475e4152c0f9b3ea6
 	private LocalDateTime fecha;
 	
 	
